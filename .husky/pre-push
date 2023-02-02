@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# if takes a while to build, then
+# perhaps move this command in pipeline,
+# like jenkins
+pnpm build
