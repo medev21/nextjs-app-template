@@ -2,13 +2,13 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # protected branches
-protected_branches='main|develop|ci/add-protected-branches'
+protected_branches='main|develop'
 
 # get current branch
 local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
 
 if [[ $local_branch_name =~ $protected_branches ]]; then
-    echo "🚫  Can\'t push changes in main or development branch" 
+    echo "🚫 Can't push changes in main or development branch" 
     exit 1
 fi
 
