@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # protected branches
-protected_branches = 'main|develop|ci/add-protected-branches'
+protected_branches='main|develop|ci/add-protected-branches'
 
 # get current branch
 local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
