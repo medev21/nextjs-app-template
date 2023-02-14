@@ -1,6 +1,30 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# protected branches
+protected_branches='main|develop'
+
+# get current branch
+local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+# reject push if it's not a protected branch
+if [[ $local_branch_name =~ $protected_branches ]]; then
+    echo "🚫 Can't push changes in main or development branch" 
+    exit 1
+fi
+
+# check if branch meets format
+valid_branch_regex='^((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)\/[a-zA-Z0-9\-]+)$'
+message="🚫 Wrong branch format. Please follow the branch format: <type change>: <branch name>-<separated by dash>"
+
+if [[ ! $local_branch_name =~ $valid_branch_regex ]]; then
+    echo "$message"
+    exit 1
+fi
+
+# TS type check
+pnpm run typecheck
+
 # if takes a while to build, then
 # perhaps move this command in pipeline,
 # like jenkins
