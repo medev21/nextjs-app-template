@@ -5,6 +5,10 @@
         "source.fixAll": true,
         "source.organizeImports": true
     },
+    // disable autoformat on markdown files
+    "[markdown]": {
+        "editor.formatOnSave": false
+    },
     "cSpell.words": [
         "codenames",
         "colour",
