@@ -8,5 +8,8 @@
             1,
             { "args": "after-used", "argsIgnorePattern": "^_" }
         ]
+    },
+    "env": {
+        "jest": true
     }
 }

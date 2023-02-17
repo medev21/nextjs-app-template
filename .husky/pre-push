@@ -25,7 +25,5 @@ fi
 # TS type check
 pnpm run typecheck
 
-# if takes a while to build, then
-# perhaps move this command in pipeline,
-# like jenkins
-pnpm build
+# run unit tests
+pnpm test:ci

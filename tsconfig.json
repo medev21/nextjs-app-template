@@ -16,9 +16,15 @@
         "incremental": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"]
+            "src/*": ["./src/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": [
+        "setupTests.ts",
+        "vitest.config.ts",
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
     "exclude": ["node_modules"]
 }
