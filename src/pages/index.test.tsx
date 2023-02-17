@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react';
 
 // component
-import App from 'src/pages';
+import App from 'src/pages/index.page';
 
 describe('Sample test', () => {
     it('render the app', () => {
