@@ -1,3 +1,4 @@
+import { Button, Grid, Stack } from '@mui/material';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from 'src/styles/Home.module.css';
@@ -61,6 +62,21 @@ export default function Home() {
                         />
                     </div>
                 </div>
+
+                <Grid
+                    container
+                    height="100vh"
+                    alignItems="center"
+                    justifyContent="center"
+                    direction="column"
+                >
+                    <h1 className="text-3xl font-bold underline">
+                        Using Material UI with Next.js 13
+                    </h1>
+                    <Stack direction="row" columnGap={1}>
+                        <Button variant="text">Text</Button>
+                    </Stack>
+                </Grid>
 
                 <div className={styles.grid}>
                     <a
